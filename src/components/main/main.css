@@ -1,0 +1,23 @@
+.section {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+    width: 34%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1C1A19;
+}
+
+.svg-logo {
+    width: 65%;
+}
+
+.right-side {
+    width: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

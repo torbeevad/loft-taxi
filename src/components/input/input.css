@@ -1,0 +1,14 @@
+.input {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-bottom: #000 solid 1px;
+    margin-bottom: 10%;
+    font-size: 150%
+}
+
+a:hover {
+    cursor: pointer;
+}
