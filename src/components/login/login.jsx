@@ -1,48 +1,30 @@
 import React from "react";
 import "./login.css";
+import { Label } from "../label/label";
+import { Input } from "../input/input";
+import { Button } from "../button/button";
 
-export const Login = ({ navigate }) => {
+export const Login = () => {
   return (
-    <>
-      <div className="login">
-        <h2 className="title">Войти</h2>
-        <form className="form">
-          <label htmlFor="email">Имя пользователя *</label>
-          <input
-            className="input"
-            id="email"
-            type="email"
-            name="email"
-            size="28"
-          />
-          <label htmlFor="password">Пароль *</label>
-          <input
-            className="input"
-            id="password"
-            type="password"
-            name="password"
-            size="28"
-          />
-        </form>
-        <button
-          className="button"
-          onClick={() => {
-            navigate("map");
-          }}
-        >
-          Войти
-        </button>
-        <div>
-          Новый пользователь?{" "}
-          {/* <a
+    <div className="login">
+      <h2 className="title">Войти</h2>
+      <form className="form">
+        <Label htmlFor="email" value="Email:" />
+        <Input id="email" name="email" type="email" />
+        <Label htmlFor="password" value="Пароль:" />
+        <Input id="password" name="password" type="password" />
+        <Button value="Войти" />
+      </form>
+      <div>
+        Новый пользователь?{" "}
+        {/* <a
             onClick={() => {
               navigate("registration");
             }}
           >
             Регистрация
           </a> */}
-        </div>
       </div>
-    </>
+    </div>
   );
 };
