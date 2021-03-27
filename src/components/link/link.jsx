@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Button = (props) => {
+export const link = (props) => {
   return (
     <a
+      href=" "
       className="link"
       onClick={(click) => {
         click.preventDefault();
-        navigate();
       }}
     >
       {props.value}

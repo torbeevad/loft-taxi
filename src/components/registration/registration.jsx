@@ -4,7 +4,7 @@ import { Label } from "../label/label";
 import { Input } from "../input/input";
 import { Button } from "../button/button";
 
-export const Registration = () => {
+export const Registration = (...props) => {
   return (
     <div className="registration">
       <h2 className="title">Регистрация</h2>
@@ -15,18 +15,25 @@ export const Registration = () => {
         <Input id="name" name="name" type="text" />
         <Label htmlFor="password" value="Пароль:" />
         <Input id="password" name="password" type="password" />
-        <Button value="Зарегестрироваться" />
+        <Button
+          value="Зарегестрироваться"
+          onClick={(e) => {
+            e.preventDefault();
+            props.navigate("map");
+          }}
+        />
       </form>
 
       <div>
         Уже зарегестрированы?
         {/* <a
-            onClick={() => {
-              navigate("login");
-            }}
-          >
-            Войти
-          </a> */}
+          href=" "
+          onClick={(e) => {
+            navigate("login");
+          }}
+        >
+          Войти
+        </a> */}
       </div>
     </div>
   );

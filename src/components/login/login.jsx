@@ -4,7 +4,7 @@ import { Label } from "../label/label";
 import { Input } from "../input/input";
 import { Button } from "../button/button";
 
-export const Login = () => {
+export const Login = (...props) => {
   return (
     <div className="login">
       <h2 className="title">Войти</h2>
@@ -13,7 +13,15 @@ export const Login = () => {
         <Input id="email" name="email" type="email" />
         <Label htmlFor="password" value="Пароль:" />
         <Input id="password" name="password" type="password" />
-        <Button value="Войти" />
+        <Button
+          value="Войти"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+
+            props.navigate("map");
+          }}
+        />
       </form>
       <div>
         Новый пользователь?{" "}
