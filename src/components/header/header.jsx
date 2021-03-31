@@ -1,9 +1,7 @@
 import React from "react";
 import "./header.css";
 import logo from "../../img/Header-logo.svg";
-
-export const Header = (...props) => {
-  console.log(props);
+export const Header = (props) => {
   return (
     <header className="header">
       <img className="header-logo" src={logo} alt={"logo"} />
@@ -36,7 +34,7 @@ export const Header = (...props) => {
               className="header-button"
               onClick={(e) => {
                 e.preventDefault();
-                props.navigate("main");
+                props.navigate("login");
               }}
             >
               Выйти

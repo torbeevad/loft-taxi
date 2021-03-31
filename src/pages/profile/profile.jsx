@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 // import { withAuth } from "../auth-context/auth-context";
-import { Button } from "../button/button";
+import { Button } from "../../components/button/button";
 
 export class Profile extends Component {
-  // unauthenticate = (event) => {
-  //   event.preventDefault();
-  //   this.props.logOut();
-  //   this.props.navigate("main");
-  // };
+  unauthenticate = (event) => {
+    event.preventDefault();
+    this.props.logOut();
+    this.props.navigate("main");
+  };
 
   render() {
     return (

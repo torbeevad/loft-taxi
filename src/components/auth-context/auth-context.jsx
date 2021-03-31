@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const withAuth = (WrappedComponent) => {
+export const WithAuth = (WrappedComponent) => {
   return class extends React.Component {
     render() {
       return (

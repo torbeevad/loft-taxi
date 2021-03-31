@@ -1,45 +1,52 @@
 import React from "react";
-import { Map } from "./components/map/map";
-import { Profile } from "./components/profile/profile";
-import { Main } from "./components/main/main";
+import { Map } from "./pages/map/map";
+import { Profile } from "./pages/profile/profile";
+import { Main } from "./pages/main/main";
 import { Header } from "./components/header/header";
-import { Button } from "./components/button/button";
-import { Login } from "./components/login/login";
+import { Login } from "./pages/login/login";
 // import { withAuth } from "./components/auth-context/auth-context";
 import "./App.css";
+import { Registration } from "./pages/registration/registration";
 
 const PAGES = {
   main: (props) => <Main {...props} />,
   header: (props) => <Header {...props} />,
   map: (props) => <Map {...props} />,
   profile: (props) => <Profile {...props} />,
-  button: (props) => <Button {...props} />,
-  login: (props) => <Login {...props} />,
+
+  login: (props) => (
+    <Main {...props}>
+      <Login {...props} />
+    </Main>
+  ),
+  registration: (props) => (
+    <Main {...props}>
+      <Registration {...props} />
+    </Main>
+  ),
 };
 
 class App extends React.Component {
-  state = { currentPage: "map" };
-
+  state = { currentPage: "login" };
   navigateTo = (page) => {
     // if (this.props.isLoggedIn) {
     this.setState({ currentPage: page });
     // } else {
-    // this.setState({ currentPage: "main" });
+    //   this.setState({ currentPage: "login" });
     // }
   };
-
   render() {
     return (
       <main>
-        {this.state.currentPage !== "main" && (
-          <Header navigate={this.navigateTo} />
-        )}
         <section>
+          {this.state.currentPage !== "login" &&
+            this.state.currentPage !== "registration" && (
+              <Header navigate={this.navigateTo} />
+            )}
           {PAGES[this.state.currentPage]({ navigate: this.navigateTo })}
         </section>
       </main>
     );
   }
 }
-
 export default App;
