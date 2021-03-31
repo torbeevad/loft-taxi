@@ -1,14 +1,20 @@
 import React from "react";
 import "./registration.css";
-import { Label } from "../label/label";
-import { Input } from "../input/input";
-import { Button } from "../button/button";
+import { Label } from "../../components/label/label";
+import { Input } from "../../components/input/input";
+import { Button } from "../../components/button/button";
 
-export const Registration = () => {
+export const Registration = (props) => {
   return (
     <div className="registration">
       <h2 className="title">Регистрация</h2>
-      <form className="form">
+      <form
+        className="form"
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          props.navigate("profile");
+        }}
+      >
         <Label htmlFor="email" value="Email:" />
         <Input id="email" name="email" type="email" />
         <Label htmlFor="name" value="Имя пользователя:" />
@@ -20,13 +26,15 @@ export const Registration = () => {
 
       <div>
         Уже зарегестрированы?
-        {/* <a
-            onClick={() => {
-              navigate("login");
-            }}
-          >
-            Войти
-          </a> */}
+        <a
+          href=" "
+          onClick={(evt) => {
+            evt.preventDefault();
+            props.navigate("login");
+          }}
+        >
+          Войти
+        </a>
       </div>
     </div>
   );

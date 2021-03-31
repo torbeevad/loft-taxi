@@ -5,6 +5,6 @@ import { Profile } from "./Profile";
 describe("Profile", () => {
   it("render correctly", () => {
     const { container } = render(<Profile />);
-    expect(container.innerHTML).toMatch("Профиль");
+    expect(container.innerHTML).toMatch("button");
   });
 });

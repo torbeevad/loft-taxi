@@ -1,8 +1,7 @@
 import React from "react";
 import "./header.css";
 import logo from "../../img/Header-logo.svg";
-
-export const Header = ({ navigate }) => {
+export const Header = (props) => {
   return (
     <header className="header">
       <img className="header-logo" src={logo} alt={"logo"} />
@@ -11,8 +10,9 @@ export const Header = ({ navigate }) => {
           <li className="header-item">
             <button
               className="header-button"
-              onClick={() => {
-                navigate("map");
+              onClick={(e) => {
+                e.preventDefault();
+                props.navigate("map");
               }}
             >
               Карта
@@ -21,8 +21,9 @@ export const Header = ({ navigate }) => {
           <li className="header-item">
             <button
               className="header-button"
-              onClick={() => {
-                navigate("profile");
+              onClick={(e) => {
+                e.preventDefault();
+                props.navigate("profile");
               }}
             >
               Профиль
@@ -31,8 +32,9 @@ export const Header = ({ navigate }) => {
           <li className="header-item">
             <button
               className="header-button"
-              onClick={() => {
-                navigate("main");
+              onClick={(e) => {
+                e.preventDefault();
+                props.navigate("login");
               }}
             >
               Выйти
