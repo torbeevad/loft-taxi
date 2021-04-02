@@ -1,21 +1,29 @@
-import React, { Component } from "react";
-// import { withAuth } from "../auth-context/auth-context";
-import { Button } from "../../components/button/button";
+import React, {Component} from "react";
+import {logIn, logOut} from "../../actions";
+import {connect} from 'react-redux'
+import {Button} from "../../components/button/button";
+import {Header} from "../../components/header/header";
 
 export class Profile extends Component {
-  unauthenticate = (event) => {
-    event.preventDefault();
-    this.props.logOut();
-    this.props.navigate("main");
-  };
+    unauthenticated = (event) => {
+        event.preventDefault();
+        this.props.logOut();
+    };
 
-  render() {
-    return (
-      <p>
-        <Button onClick={this.unauthenticate} value="Выйти" />
-      </p>
-    );
-  }
+    render() {
+        return (
+            <>
+                <Header/>
+                <div>
+                    <p>Профиль</p>
+                    <Button onClick={this.unauthenticated} value="Log Out!"/>
+                </div>
+            </>
+        );
+    }
 }
 
-// export const ProfileWithAuth = withAuth(Profile);
+export const ProfileWithConnect = connect(
+    null,
+    {logIn, logOut}
+)(Profile);

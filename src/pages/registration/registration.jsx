@@ -3,6 +3,7 @@ import "./registration.css";
 import { Label } from "../../components/label/label";
 import { Input } from "../../components/input/input";
 import { Button } from "../../components/button/button";
+import {Link} from "react-router-dom";
 
 export const Registration = (props) => {
   return (
@@ -12,7 +13,6 @@ export const Registration = (props) => {
         className="form"
         onSubmit={(evt) => {
           evt.preventDefault();
-          props.navigate("profile");
         }}
       >
         <Label htmlFor="email" value="Email:" />
@@ -26,15 +26,7 @@ export const Registration = (props) => {
 
       <div>
         Уже зарегестрированы?
-        <a
-          href=" "
-          onClick={(evt) => {
-            evt.preventDefault();
-            props.navigate("login");
-          }}
-        >
-          Войти
-        </a>
+          <Link to="/">Войти</Link>
       </div>
     </div>
   );
