@@ -1,6 +1,5 @@
 .button {
     height: 50px;
-    width: 100%;
     align-items: center;
     border-radius: 500px;
     padding: auto;
@@ -10,8 +9,14 @@
     background: #FDBF5A;
     font-weight: 400;
     font-size: 130%;
+    min-width: 40%;
+    min-height: 10%;
 }
 
-a:hover {
+.button:hover {
     cursor: pointer;
+}
+
+.button:active {
+    background: #FFA842;
 }

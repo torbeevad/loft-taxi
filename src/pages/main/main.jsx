@@ -9,7 +9,7 @@ export class Main extends React.Component {
 
     render() {
         return (
-            <div className="section">
+            <div className="main-section">
                 <div className="left-side">
                     <img className="svg-logo" src={logo} alt={"logo"}/>
                 </div>

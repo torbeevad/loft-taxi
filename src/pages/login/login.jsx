@@ -27,9 +27,9 @@ export class Login extends React.Component {
                     <>
                         <form onSubmit={this.authenticate} className="form">
                             <Label htmlFor="email" value="Email:"/>
-                            <Input id="email" name="email" type="email"/>
+                            <Input className="form-input" id="email" name="email" type="email"/>
                             <Label htmlFor="password" value="Пароль:"/>
-                            <Input id="password" name="password" type="password"/>
+                            <Input className="form-input" id="password" name="password" type="password"/>
                             <Button value="Войти" type="submit"/>
                         </form>
                         <div>

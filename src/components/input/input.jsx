@@ -6,7 +6,7 @@ export const Input = (props) => {
     <input
       value={props.value}
       id={props.id}
-      className="input"
+      className={props.className}
       name={props.name}
       type={props.type}
       size="28"

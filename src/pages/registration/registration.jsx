@@ -16,11 +16,11 @@ export const Registration = (props) => {
         }}
       >
         <Label htmlFor="email" value="Email:" />
-        <Input id="email" name="email" type="email" />
+        <Input className="form-input" id="email" name="email" type="email" />
         <Label htmlFor="name" value="Имя пользователя:" />
-        <Input id="name" name="name" type="text" />
+        <Input className="form-input" id="name" name="name" type="text" />
         <Label htmlFor="password" value="Пароль:" />
-        <Input id="password" name="password" type="password" />
+        <Input className="form-input" id="password" name="password" type="password" />
         <Button value="Зарегестрироваться" />
       </form>
 
