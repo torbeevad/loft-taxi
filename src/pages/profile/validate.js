@@ -1,1 +1,6 @@
-let input = document.getElementById("cardNumber")
+var cleave = new Cleave('.input-element', {
+    creditCard: true,
+    onCreditCardTypeChanged: function (type) {
+        // update UI ...
+    }
+});
