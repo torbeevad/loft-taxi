@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../img/Loft-taxi.svg";
 import "./main.css";
 import {LoginWithConnect} from "../login/login";
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import {Registration} from "../registration/registration";
 
 export class Main extends React.Component {
@@ -14,8 +14,10 @@ export class Main extends React.Component {
                     <img className="svg-logo" src={logo} alt={"logo"}/>
                 </div>
                 <div className="right-side">
+                    <Switch>
                         <Route exact path="/" component={LoginWithConnect}/>
-                        <Route exact path="/registration" component={Registration}/>
+                        <Route path="/registration" component={Registration}/>
+                    </Switch>
                 </div>
             </div>
         );

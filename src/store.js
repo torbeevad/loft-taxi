@@ -1,5 +1,11 @@
-import { createStore, applyMiddleware } from "redux";
+import {createStore, applyMiddleware} from "redux";
 import rootReducer from "./reducers";
-import { authMiddleware } from "./authMiddleware";
+import createSagaMiddleWare from "redux-saga"
+import {authSaga} from "./authSaga"
+import {composeWithDevTools} from "redux-devtools-extension";
 
-export const store = createStore(rootReducer, applyMiddleware(authMiddleware));
+const sagaMiddleware = createSagaMiddleWare()
+
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+
+sagaMiddleware.run(authSaga)
