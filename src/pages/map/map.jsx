@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import mapboxgl from "mapbox-gl";
 import "./map.css";
-import {Header} from "../../components/header/header";
+import {HeaderWithConnect} from "../../components/header/header";
+import {MapRouter} from "../../components/maprouter/maprouter";
+import {connect} from "react-redux";
 
 export class Map extends Component {
     map = null;
@@ -26,11 +28,15 @@ export class Map extends Component {
     render() {
         return (
             <>
-                <Header/>
+                <HeaderWithConnect/>
                 <div className="map-wrapper">
+                    <MapRouter />
                     <div data-testid="map" className="map" ref={this.mapContainer}/>
                 </div>
             </>
         );
     }
 }
+
+export const MapWithConnect = connect(
+    (state) => ({map: state.map}))(Map);

@@ -1,6 +1,6 @@
 import {recordSaga} from "./recordSaga";
 import {authenticateSaga} from "./authSaga";
-import {authenticate} from "./actions";
+import {authenticate} from "../actions";
 
 
 jest.mock("./api", () => ({serverLogin: jest.fn(() => true)}))

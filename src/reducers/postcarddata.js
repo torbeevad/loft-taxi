@@ -1,4 +1,4 @@
-import {LOG_IN, LOG_OUT} from "../actions";
+import {POST_CARD_DATA_ACTION} from '../actions';
 
 const initialState = {
     isLoggedIn: false
@@ -6,13 +6,9 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case LOG_IN: {
+        case POST_CARD_DATA_ACTION:
             return {isLoggedIn: true}
-        }
-        case LOG_OUT: {
-            return {isLoggedIn: false}
-        }
         default:
-            return state;
+            return state
     }
 }

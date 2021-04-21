@@ -3,7 +3,7 @@ import logo from "../../img/Loft-taxi.svg";
 import "./main.css";
 import {LoginWithConnect} from "../login/login";
 import {Route, Switch} from "react-router-dom";
-import {Registration} from "../registration/registration";
+import Registration from "../registration/registration";
 
 export class Main extends React.Component {
 
