@@ -5,27 +5,30 @@ import {getAddressList} from "../../actions";
 import {connect} from "react-redux";
 
 
-export const MapRouter = ({getAddress, address}) => {
+export const MapRouter = ({getAddress, address, address1, address2}) => {
 
     useEffect(() => {
-        console.log('address:', address)
-        getAddress(address)
-    })
+        getAddress()
+    }, [])
 
     return (
         <div className="map-router">
             <select>
-                <option value="value1">Значение 1</option>
+                {address.list.map((item) => (
+                    <option name={address1} value={item} key={{item}}>{item}</option>
+                ))}
             </select>
             <select>
-                <option value="value1">Значение 2</option>
+                {address.list.map((item) => (
+                    <option name={address2} value={item} key={{item}}>{item}</option>
+                ))}
             </select>
             <Button value="Вызвать такси"/>
         </div>
     );
 };
 
-export default connect(
+export const MapRouterWithConnect = connect(
     state => ({address: state.address}),
     {getAddress: getAddressList}
-)
+)(MapRouter)

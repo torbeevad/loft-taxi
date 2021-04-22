@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import mapboxgl from "mapbox-gl";
 import "./map.css";
 import {HeaderWithConnect} from "../../components/header/header";
-import {MapRouter} from "../../components/maprouter/maprouter";
+import {MapRouterWithConnect} from "../../components/maprouter/maprouter";
 import {connect} from "react-redux";
 
-export class Map extends Component {
+class Map extends Component {
     map = null;
     mapContainer = React.createRef();
 
@@ -30,7 +30,7 @@ export class Map extends Component {
             <>
                 <HeaderWithConnect/>
                 <div className="map-wrapper">
-                    <MapRouter />
+                    <MapRouterWithConnect />
                     <div data-testid="map" className="map" ref={this.mapContainer}/>
                 </div>
             </>

@@ -1,12 +1,14 @@
-import {takeEvery, call, put} from  "redux-saga/effects"
+import {takeEvery, call, put} from "redux-saga/effects"
 import {serverGetAddressList} from "../api";
 import {GET_ADDRESS_LIST, getAddressListFailure, getAddressListSuccess} from "../actions";
 
 export function* addressSaga() {
-    const data = yield call(serverGetAddressList)
-    if (data.addresses) {
-        yield put(getAddressListSuccess(data.addresses))
-    } else {
+    try {
+        const data = yield call(serverGetAddressList)
+        if (data.addresses) {
+            yield put(getAddressListSuccess(data.addresses))
+        }
+    } catch {
         yield put(getAddressListFailure("ошибка"))
     }
 }
