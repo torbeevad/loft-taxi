@@ -1,5 +1,5 @@
 import React from "react";
-import {Map} from "./pages/map/map";
+import {MapWithConnect} from "./pages/map/map";
 import {ProfileWithConnect} from "./pages/profile/profile";
 import {Main} from "./pages/main/main";
 import {connect} from "react-redux";
@@ -17,7 +17,7 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Main}/>
                         <Route exact path="/registration" component={Main}/>
-                        <PrivateRoute exact path="/map" component={Map}/>
+                        <PrivateRoute exact path="/map" component={MapWithConnect}/>
                         <PrivateRoute exact path="/profile" component={ProfileWithConnect}/>
                     </Switch>
                 </section>
